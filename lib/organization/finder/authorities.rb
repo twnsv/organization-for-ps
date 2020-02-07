@@ -1,10 +1,10 @@
-module LarvataOrganization
+module Organization
   module Finder
     class Authorities
       attr_reader :company_node
 
       def initialize(uuid)
-        @company_node =  LarvataOrganization.tree_node_class.roots.includes(:nodeable, :children).find_by_code(uuid)
+        @company_node =  Organization.tree_node_class.roots.includes(:nodeable, :children).find_by_code(uuid)
       end
 
       def authority_index

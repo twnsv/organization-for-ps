@@ -1,10 +1,10 @@
-module LarvataOrganization
+module Organization
   module Trunk
     class Growth
       class << self
         def create_org_root(uuid, name)
-          org = LarvataOrganization::Factory::Orgs.create_company(uuid, name)
-          root = LarvataOrganization::Factory::Nodes.create_root(org)
+          org = Organization::Factory::Orgs.create_company(uuid, name)
+          root = Organization::Factory::Nodes.create_root(org)
 
           {
             organization: org,
@@ -13,14 +13,14 @@ module LarvataOrganization
         end
 
         def add_org_node(parent_node, typing, name, code)
-          org = LarvataOrganization::Factory::Orgs.create_org(typing, name, code)
-          node = LarvataOrganization::Factory::Nodes.create_child(parent_node, org)
+          org = Organization::Factory::Orgs.create_org(typing, name, code)
+          node = Organization::Factory::Nodes.create_child(parent_node, org)
 
-          manager_org = LarvataOrganization::Factory::Orgs.create_org('manager', '主管', "#{org.code}_manager")
-          manager_node = LarvataOrganization::Factory::Nodes.create_child(node, manager_org)
+          manager_org = Organization::Factory::Orgs.create_org('manager', '主管', "#{org.code}_manager")
+          manager_node = Organization::Factory::Nodes.create_child(node, manager_org)
 
-          member_org = LarvataOrganization::Factory::Orgs.create_org('member', '員工', "#{org.code}_member")
-          member_node = LarvataOrganization::Factory::Nodes.create_child(node, member_org)
+          member_org = Organization::Factory::Orgs.create_org('member', '員工', "#{org.code}_member")
+          member_node = Organization::Factory::Nodes.create_child(node, member_org)
 
           {
             organization: org,

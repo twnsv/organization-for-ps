@@ -1,4 +1,4 @@
-module LarvataOrganization
+module Organization
   module Finder
     class Users
     end

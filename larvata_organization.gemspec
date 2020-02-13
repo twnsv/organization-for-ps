@@ -1,17 +1,17 @@
 $:.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
-require "organization/version"
+require "larvata_organization/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |spec|
-  spec.name        = "organization"
-  spec.version     = Organization::VERSION
+  spec.name        = "larvata_organization"
+  spec.version     = LarvataOrganization::VERSION
   spec.authors     = ["wen"]
-  spec.email       = ["alejet.larvata@gmail.com"]
+  spec.email       = ["wen@larvata.tw"]
   spec.homepage    = ""
-  spec.summary     = "Summary of Organization."
-  spec.description = "Description of Organization."
+  spec.summary     = "Summary of LarvataOrganization."
+  spec.description = "Description of LarvataOrganization."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
